@@ -399,23 +399,6 @@
               s='<tr id='+j+'><td>'+data[i].serviceName+'</td><td>'+data[i].version+'</td><td>'+data[i].serviceStatus+'</td><td>'+data[i].InstalledStatus+'</td><td><button class="btn btn-default btn-block">'+t+'</button></td></tr>';
             $("#tab1").append(s);
                 }
-                
-                 $("#btn1").click(function(){
-                $("#p1").text("Service name: "+ $("#srv1").text());
-                $("#p2").text("Status: "+$("#sts1").text());
-                $("#myModal").modal();
-              });
-             $("#btn2").click(function(){
-                 $("#p1").text("Service name: "+ $("#srv2").text());
-                $("#p2").text("Status: "+$("#sts2").text());
-                $("#myModal").modal();
-              });
-                $("#btn3").click(function(){
-                $("#p1").text("Service name: "+ $("#srv3").text());
-                $("#p2").text("Status: "+$("#sts3").text());
-                    $("#myModal").modal();
-              });                          
-            
                  
                 $("td:has(button)").on("click", function(){
                  var x=$(this).parent().attr('id');
