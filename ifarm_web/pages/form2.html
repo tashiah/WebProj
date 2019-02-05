@@ -220,25 +220,30 @@
               $("form").submit(function(event){
                 var p=$("#sqlport").val();
                 var w=$("#host2").val();
-                var re= "/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/g";
+                var re= "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$";
+                var regexp = new RegExp(re);
                 $(".error").remove();
+                event.preventDefault();
                 if(!$.isNumeric(p))
                 {
-                event.preventDefault();
-                $("#sqlport").after('<span class="error">Enter integers only</span>');
+                    $("#sqlport").after('<span class="error">Enter integers only</span>');
                 }
-                if(p<80||p>65335)
+                else if(p<80||p>65335)
                 {
-                event.preventDefault();
-                $("#sqlport").after('<span class="error">Invalid port</span>');
+                    $("#sqlport").after('<span class="error">Invalid port</span>');
                 }
-                if(!re.test(w))
+                else if(!regexp.test(w))
                 {
-                event.preventDefault();
-                $("#host2").after('<span class="error">Invalid hostname</span>');   
-                }  
-                });
-                });  
+                    $("#host2").after('<span class="error">Invalid hostname</span>'); 
+                }
+                else
+                {
+                    $(".error").remove();
+                    alert("valid!");
+                    return true;
+                }
+              });
+             });  
         </script>
         
     </body>
