@@ -221,7 +221,6 @@
                 var p=$("#sqlport").val();
                 var w=$("#host2").val();
                 var re= "/^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$/g";
-                var x=re.test(w);
                 $(".error").remove();
                 if(!$.isNumeric(p))
                 {
@@ -233,7 +232,7 @@
                 event.preventDefault();
                 $("#sqlport").after('<span class="error">Invalid port</span>');
                 }
-                if(!x)
+                if(!re.test(w))
                 {
                 event.preventDefault();
                 $("#host2").after('<span class="error">Invalid hostname</span>');   
