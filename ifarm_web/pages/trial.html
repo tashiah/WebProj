@@ -20,6 +20,8 @@
 
         <!-- Custom Fonts -->
         <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <link rel="import" href="modalform.html">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,6 +38,10 @@
             }
             .modal-tall .modal-body {
               height: 80%;
+            }
+            .btn-primary{
+                background-color: #181818;
+                border-color: #ffffff;
             }
         </style>
     </head>
@@ -133,105 +139,7 @@
                 <!-- /.navbar-top-links -->
                 
                  
-            <!--    <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-                            <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                                </li>
-                            <li>
-                                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="flot.html">Flot Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="morris.html">Morris.js Charts</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                            </li>
-                            <li>
-                                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="panels-wells.html">Panels and Wells</a>
-                                    </li>
-                                    <li>
-                                        <a href="buttons.html">Buttons</a>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html">Notifications</a>
-                                    </li>
-                                    <li>
-                                        <a href="typography.html">Typography</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons.html"> Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="grid.html">Grid</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level">
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="active">
-                                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a class="active" href="blank.html">Blank Page</a>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">Login Page</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>  
-                    </div>
-                </div>  -->
-                <!-- /.navbar-static-side -->
+           
             </nav>
 
             <!-- Page Content -->
@@ -246,22 +154,23 @@
                                       <tr>
                                       <tr>
                                         <th>Service Name</th>
-                                        <th>Version</th>
-                                        <th>Status</th>
+                                        <th>Running Status</th>
                                         <th>Installed Status</th>
-                                        <th>Action(Button)</th>
+                                        <th>Required Version</th>
+                                        <th>Installed Version</th>
+                                        <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tab1">
                                     </tbody>
                                   </table>
-                                </div>
-                          
+                                </div>        
+                                <br>
                         </div>
                         <!-- /.col-lg-12 -->
                         
                         <!-- Modal -->
-                                      <div class="modal fade modal-tall" id="myModal" role="dialog">
+                                      <div class="modal fade modal-tall" id="myModal1" role="dialog">
                                         <div class="modal-dialog">
 
                                           <!-- Modal content-->
@@ -281,9 +190,47 @@
 
                                         </div>
                                       </div>
-                    </div>
+                            <!--/Modal-->
+                        
                     
-                    <div id="div1"> </div>
+                            <div class="col-lg-12">
+                                <div class="btn-group btn-group-lg btn-group-justified">
+                                    <div class="btn-group">
+                                        <button type="button" id="check" class="btn btn-primary">Check Services</button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary">Provide Ambari Credentials</button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary">Deploy ifarm</button>
+                                    </div>
+                                </div>
+                                <br><br>
+                            </div>
+                        
+                         <!-- Modal -->
+                                      <div class="modal fade modal-tall" id="myModal2" role="dialog">
+                                        <div class="modal-dialog">
+
+                                          <!-- Modal content-->
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                              <h4 class="modal-title">Check Services</h4>
+                                            </div>
+                                            <div id=modalBody class="modal-body">
+                                           
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                          </div>
+
+                                        </div>
+                                      </div>
+                            <!--/Modal-->
+                          
+                    </div>
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
@@ -304,76 +251,84 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="../js/startmin.js"></script>
-                
         
         <script>
 
- var jsondata= {           
+ var jsondata= {
                 "status": 200,
                 "data": [{
-                "type": "HDP",
-                "serviceName": "HDFS",
-                "version": "2.6.0",
-                "serviceStatus": "Unknown",
-		        "InstalledStatus": "Unknown"
-            }, {
-                "type": "HDP",
-                "serviceName": "NIFI",
-                "version": "1.5.0",
-                "serviceStatus": "Running",
-		       "InstalledStatus": "Installed"
-            }, {
-                "type": "HDP",
-                "serviceName": "Zookeeper",
-                "version": "3.4.0",
-                "serviceStatus": "Unknown",
-		       "InstalledStatus": "Unknown"
-            }, {
-                "type": "HDP",
-                "serviceName": "Kafka",
-                "version": "1.0.0",
-                "serviceStatus": "Running",
-		      "InstalledStatus": "Installed"
-            }, {
-                "type": "HDP",
-                "serviceName": "Spark2",
-                "version": "2.3.0",
-                "serviceStatus": "Unknown",
-		      "InstalledStatus": "Unknown"
-            }, {
-                "type": "HDP",
-                "serviceName": "solr",
-                "version": "5.5",
-                "serviceStatus": "Unknown",
-		        "InstalledStatus": "Unknown"
-            }, {
-                "type": "NON-HDP",
-                "serviceName": "Mysql",
-                "version": "8.0",
-                "serviceStatus": "Running",
-		        "InstalledStatus": "Installed"
-                
-            }, {
-                "type": "NON-HDP",
-                "serviceName": "Mongo",
-                "version": "3.5",
-                "serviceStatus": "Stopped",
-		        "InstalledStatus": "Installed"
-            }, {
-                "type": "NON-HDP",
-                "serviceName": "Neo4J",
-                "version": "3.5",
-                "serviceStatus": "Stopped",
-		      "InstalledStatus": "Installed"
-            }, {
-                "type": "NON-HDP",
-                "serviceName": "PackServer",
-                "version": "1.0",
-                "serviceStatus": "Stopped",
-		       "InstalledStatus": "Installed"
-            }],
-            "message": "Success"
-            };
+                    "type": "HDP",
+                    "serviceName": "HDFS",
+                    "runningStatus": "Started",
+                    "installedStatus": "Installed",
+                    "requiredVersion": "2.6.0",
+                    "installedVersion": "2.7.1"
+                }, {
+                    "type": "HDP",
+                    "serviceName": "NIFI",
+                    "runningStatus": "Stopped",
+                    "installedStatus": "Installed",
+                    "requiredVersion": "1.5.0",
+                    "installedVersion": "1.7.0"
+                }, {
+                    "type": "HDP",
+                    "serviceName": "Zookeeper",
+                    "runningStatus": "Started",
+                    "installedStatus": "Installed",
+                    "requiredVersion": "1.4.0",
+                    "installedVersion": "1.2.0"
+                }, {
+                    "type": "HDP",
+                    "serviceName": "Kafka",
+                    "runningStatus": "Stopped",
+                    "installedStatus": "Installed",
+                    "requiredVersion": "1.0.0",
+                    "installedVersion": "1.0.0"
+                }, {
+                    "type": "HDP",
+                    "serviceName": "Spark2",
+                    "runningStatus": "Running",
+                    "installedStatus": "Installed",
+                    "requiredVersion": "2.3.0",
+                    "installedVersion": "2.1.1"
+                }, {
+                    "type": "HDP",
+                    "serviceName": "solr",
+                    "runningStatus": "Unknown",
+                    "installedStatus": "Unknown",
+                    "requiredVersion": "5.5",
+                    "installedVersion": "Unknown"
+                }, {
+                    "type": "NON-HDP",
+                    "serviceName": "Mysql",
+                    "runningStatus": "Unknown",
+                    "installedStatus": "Unknown",
+                    "requiredVersion": "8.0",
+                    "installedVersion": "Unknown"
+                }, {
+                    "type": "NON-HDP",
+                    "serviceName": "Mongo",
+                    "runningStatus": "Unknown",
+                    "installedStatus": "Unknown",
+                    "requiredVersion": "3.5",
+                    "installedVersion": "Unknown"
+                }, {
+                    "type": "NON-HDP",
+                    "serviceName": "Neo4J",
+                    "runningStatus": "Unknown",
+                    "installedStatus": "Unknown",
+                    "requiredVersion": "3.5",
+                    "installedVersion": "Unknown"
+                }, {
+                    "type": "NON-HDP",
+                    "serviceName": "PackServer",
+                    "runningStatus": "Unknown",
+                    "installedStatus": "Unknown",
+                    "requiredVersion": "1.0",
+                    "installedVersion": "Unknown"
+                }],
+                "message": "Success"
+            }
     
             var data= jsondata.data;
             
@@ -384,11 +339,11 @@
             for(i=0; i<data.length; i++)
                 {
                     j=i.toString();
-                    if(data[i].serviceStatus.toUpperCase()=="RUNNING")
+                    if(data[i].runningStatus.toUpperCase()=="RUNNING")
                         {
                          t="Stop";   
                         }
-                    else if(data[i].serviceStatus.toUpperCase()=="STOPPED")
+                    else if(data[i].runningStatus.toUpperCase()=="STOPPED")
                         {
                          t="Start";   
                         }
@@ -396,19 +351,53 @@
                         t="Install";
                     }
                     
-              s='<tr id='+j+'><td>'+data[i].serviceName+'</td><td>'+data[i].version+'</td><td>'+data[i].serviceStatus+'</td><td>'+data[i].InstalledStatus+'</td><td><button class="btn btn-default btn-block">'+t+'</button></td></tr>';
-            $("#tab1").append(s);
-                }
-                 
+                    var p=data[i].requiredVersion;
+                    if(p.toUpperCase()!="UNKNOWN")
+                        {
+                            var arr = p.split(".");
+                            p=arr[0]+"."+arr[1];
+                        }
+                    var q=data[i].installedVersion;
+                    if(q.toUpperCase()!="UNKNOWN")
+                        {
+                            var arr = q.split(".");
+                            q=arr[0]+"."+arr[1];
+                        }
+                    if(p.toUpperCase()!="UNKNOWN" && q.toUpperCase()!="UNKNOWN")
+                        {
+                            if(p<q)
+                                {
+                                    //red
+                                     s='<tr id='+j+'><td>'+data[i].serviceName+'</td><td>'+data[i].runningStatus+'</td><td>'+data[i].installedStatus+'</td><td style="background-color: #ff3333;">'+p+'</td><td>'+q+'</td><td><button type="button" class="btn btn-default btn-block">'+t+'</button></td></tr>';
+                                } 
+                            else
+                               {
+                                   //green
+                                    s='<tr id='+j+'><td>'+data[i].serviceName+'</td><td>'+data[i].runningStatus+'</td><td>'+data[i].installedStatus+'</td><td style="background-color:#33ff33;">'+p+'</td><td>'+q+'</td><td><button type="button" class="btn btn-default btn-block">'+t+'</button></td></tr>';
+                               }
+                        }
+                    else
+                        {
+                            s='<tr id='+j+'><td>'+data[i].serviceName+'</td><td>'+data[i].runningStatus+'</td><td>'+data[i].installedStatus+'</td><td>'+p+'</td><td>'+q+'</td><td><button type="button" class="btn btn-default btn-block">'+t+'</button></td></tr>';
+                        }
+                    $("#tab1").append(s);
+                }   
+            
+
+                $("#check").click(function(){
+                $("#modalBody").load("modalform.html");
+                $("#myModal2").modal();
+                });
+
                 $("td:has(button)").on("click", function(){
                  var x=$(this).parent().attr('id');
                     x=Number(x);
                 var table=document.getElementById("tab1");
                  var sr= table.rows[x+2].cells[0].innerHTML;
-                 var st= table.rows[x+2].cells[2].innerHTML;
+                 var st= table.rows[x+2].cells[1].innerHTML;
                  $("#p1").text("Service name: "+sr);
                  $("#p2").text("Status: "+st);
-                 $("#myModal").modal();
+                 $("#myModal1").modal();
                 });
             
             </script>
