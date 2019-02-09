@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>jQeury.steps Demos</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="jquery.steps.css">
+        <script src="modernizr-2.6.2.min.js"></script>
+        <script src="jquery-1.9.1.min.js"></script>
+        <script src="jquery.cookie-1.3.1.js"></script>
+        <script src="jquery.steps.js"></script>
+        
+<style>
+
+input {
+  padding: 10px;
+  width: 90%;
+  height: 30px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+            
+label.error {
+     display: inline;
+}
+
+</style>
+    </head>
+    
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="content">
+            <h1>Deploy:</h1>
+
+            <div id="wizard">
+                <h2>HDFS</h2>
+                <section>
+                    <p><input placeholder="HDFS Name Node" oninput="this.className = ''" name="hdfsNameNode"></p>
+                    <p><input placeholder="Hadoop Config Location" oninput="this.className = ''" name="hadoopConfigLoc"></p>
+                    <p><input placeholder="HDFS Proxy User" oninput="this.className = ''" name="hdfsProxyUser"></p>
+                </section>
+
+                <h2>Kafka</h2>
+                <section>
+                     <p><input placeholder="Kafka Broker Host" oninput="this.className = ''" name="kafkaBrokerHost"></p>
+                    <p><input placeholder="Kafka Broker Port" oninput="this.className = ''" name="kafkaBrokerPort"></p>
+                </section>
+
+                <h2>Solr</h2>
+                <section>
+                     <p><input placeholder="Solr Host" oninput="this.className = ''" name="solrHost"></p>
+                    <p><input placeholder="Solr Port" oninput="this.className = ''" name="solrPort"></p>
+                    <p><input placeholder="Solr Username" oninput="this.className = ''" name="solrUsername"></p>
+                    <p><input placeholder="Solr Password" oninput="this.className = ''" name="solrPassword"></p>
+                </section>
+
+                <h2>MySQL</h2>
+                <section>
+                   <p><input placeholder="MySQL Host" oninput="this.className = ''" name="mysqlHost"></p>
+                    <p><input placeholder="MySQL Port" oninput="this.className = ''" name="mysqlPort"></p>
+                    <p><input placeholder="MySQL Username" oninput="this.className = ''" name="mysqlUsername"></p>
+                    <p><input placeholder="MySQL Password" oninput="this.className = ''" name="mysqlPassword"></p>
+                </section>
+                
+                <h2>Mongo</h2>
+                <section>
+                    <p><input placeholder="Mongo Hostname" oninput="this.className = ''" name="mongoHostname"></p>
+                    <p><input placeholder="Mongo Port" oninput="this.className = ''" name="mongoPort"></p>
+                    <p><input placeholder="Mongo Username" oninput="this.className = ''" name="mongoUsername"></p>
+                    <p><input placeholder="Mongo Password" oninput="this.className = ''" name="mongoPassword"></p>            
+                </section>
+                
+                <h2>Spark2</h2>
+                <section>
+                    <p><input placeholder="Spark2" oninput="this.className = ''" name="Spark2"></p>
+                    <p><input placeholder="Spark2" oninput="this.className = ''" name="Spark2"></p>
+                </section>
+                
+                <h2>Livy</h2>
+                <section>
+                     <p><input placeholder="Livy Host" oninput="this.className = ''" name="livyHost"></p>
+                    <p><input placeholder="Livy Port" oninput="this.className = ''" name="livyPort"></p>
+                    <p><input placeholder="Livy Username" oninput="this.className = ''" name="livyUsername"></p>
+                    <p><input placeholder="Livy Password" oninput="this.className = ''" name="livyPassword"></p>
+                </section>
+                
+                <h2>Neo4J</h2>
+                <section>
+                    <p><input placeholder="Neo4J Host" oninput="this.className = ''" name="neo4jHost"></p>
+                    <p><input placeholder="Neo4J Port" oninput="this.className = ''" name="neo4jPort"></p>
+                    <p><input placeholder="Neo4J Username" oninput="this.className = ''" name="neo4jUsername"></p>
+                    <p><input placeholder="Neo4J Password" oninput="this.className = ''" name="neo4jPassword"></p>
+                </section>
+                
+                <h2>PackServer</h2>
+                <section>
+                    <p><input placeholder="PackServer Host" oninput="this.className = ''" name="packserverHost"></p>
+                    <p><input placeholder="PackServer Port" oninput="this.className = ''" name="packserverPort"></p>
+                </section>
+                
+                <h2>Nifi</h2>
+                <section>
+                    <p><input placeholder="Nifi Host" oninput="this.className = ''" name="nifiHost"></p>
+                    <p><input placeholder="Nifi Port" oninput="this.className = ''" name="nifiPort"></p>
+                    <p><input placeholder="Nifi Username" oninput="this.className = ''" name="nifiUsername"></p>
+                    <p><input placeholder="Nifi Password" oninput="this.className = ''" name="nifiPassword"></p>
+                </section>
+                
+                
+            </div>
+        </div>
+        
+          <script>
+                $(function ()
+                {
+                    $("#wizard").steps({
+                        headerTag: "h2",
+                        bodyTag: "section",
+                        transitionEffect: "slideLeft",
+                        stepsOrientation: "vertical"
+                    });
+                });
+            </script>
+        
+    </body>
+</html>
