@@ -9,7 +9,7 @@ var getData=function(result){
             for(i=0; i<data.length; i++)
                 {
                     j=i.toString();
-                    if(data[i].runningStatus.toUpperCase()=="RUNNING")
+                    if(data[i].runningStatus.toUpperCase()=="RUNNING"||data[i].runningStatus.toUpperCase()=="STARTED")
                         {
                          t="Stop";   
                         }
