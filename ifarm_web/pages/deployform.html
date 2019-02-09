@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap Core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="../css/metisMenu.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../css/startmin.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+#deployform {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: fontawesome;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: fontawesome;
+  border: 1px solid #aaaaaa;
+}
+
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.error {
+    color: red;
+    margin-left: 5px;
+}
+            
+label.error {
+     display: inline;
+}
+
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: fontawesome;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #4CAF50;
+}
+</style>
+    
+</head>
+
+
+<body>
+
+<form id="deployform">
+  <h1>Deploy:</h1>
+  
+  <div class="tab"><h4>HDFS</h4>
+    <p><input placeholder="HDFS Name Node" oninput="this.className = ''" name="hdfsNameNode" required></p>
+    <p><input placeholder="Hadoop Config Location" oninput="this.className = ''" name="hadoopConfigLoc" required></p>
+    <p><input placeholder="HDFS Proxy User" oninput="this.className = ''" name="hdfsProxyUser"></p>
+    </div>
+    
+  <div class="tab"><h4>Kafka</h4>
+   <p><input placeholder="Kafka Broker Host" oninput="this.className = ''" name="kafkaBrokerHost" required></p>
+    <p><input placeholder="Kafka Broker Port" oninput="this.className = ''" name="kafkaBrokerPort" required></p>
+  </div>
+    
+  <div class="tab"><h4>Solr</h4>
+   <p><input placeholder="Solr Host" oninput="this.className = ''" name="solrHost"></p>
+    <p><input placeholder="Solr Port" oninput="this.className = ''" name="solrPort"></p>
+    <p><input placeholder="Solr Username" oninput="this.className = ''" name="solrUsername"></p>
+    <p><input placeholder="Solr Password" oninput="this.className = ''" name="solrPassword"></p>
+  </div>
+    
+  <div class="tab"><h4>MySQL</h4>
+    <p><input placeholder="MySQL Host" oninput="this.className = ''" name="mysqlHost"></p>
+    <p><input placeholder="MySQL Port" oninput="this.className = ''" name="mysqlPort"></p>
+    <p><input placeholder="MySQL Username" oninput="this.className = ''" name="mysqlUsername"></p>
+    <p><input placeholder="MySQL Password" oninput="this.className = ''" name="mysqlPassword"></p>
+  </div>
+    
+  <div class="tab"><h4>Mongo</h4>
+    <p><input placeholder="Mongo Hostname" oninput="this.className = ''" name="mongoHostname"></p>
+    <p><input placeholder="Mongo Port" oninput="this.className = ''" name="mongoPort"></p>
+    <p><input placeholder="Mongo Username" oninput="this.className = ''" name="mongoUsername"></p>
+    <p><input placeholder="Mongo Password" oninput="this.className = ''" name="mongoPassword"></p>
+  </div>
+    
+  <div class="tab"><h4>Spark2</h4>
+    <p><input placeholder="Spark2" oninput="this.className = ''" name="Spark2"></p>
+    <p><input placeholder="Spark2" oninput="this.className = ''" name="Spark2"></p>
+  </div>
+    
+  <div class="tab"><h4>Livy</h4>
+    <p><input placeholder="Livy Host" oninput="this.className = ''" name="livyHost"></p>
+    <p><input placeholder="Livy Port" oninput="this.className = ''" name="livyPort"></p>
+    <p><input placeholder="Livy Username" oninput="this.className = ''" name="livyUsername"></p>
+    <p><input placeholder="Livy Password" oninput="this.className = ''" name="livyPassword"></p>
+  </div>
+    
+  <div class="tab"><h4>Neo4J</h4>
+   <p><input placeholder="Neo4J Host" oninput="this.className = ''" name="neo4jHost"></p>
+    <p><input placeholder="Neo4J Port" oninput="this.className = ''" name="neo4jPort"></p>
+    <p><input placeholder="Neo4J Username" oninput="this.className = ''" name="neo4jUsername"></p>
+    <p><input placeholder="Neo4J Password" oninput="this.className = ''" name="neo4jPassword"></p>
+  </div>
+    
+  <div class="tab"><h4>PackServer</h4>
+    <p><input placeholder="PackServer Host" oninput="this.className = ''" name="packserverHost"></p>
+    <p><input placeholder="PackServer Port" oninput="this.className = ''" name="packserverPort"></p>
+  </div>
+    
+  <div class="tab"><h4>Nifi</h4>
+    <p><input placeholder="Nifi Host" oninput="this.className = ''" name="nifiHost"></p>
+    <p><input placeholder="Nifi Port" oninput="this.className = ''" name="nifiPort"></p>
+    <p><input placeholder="Nifi Username" oninput="this.className = ''" name="nifiUsername"></p>
+    <p><input placeholder="Nifi Password" oninput="this.className = ''" name="nifiPassword"></p>
+  </div>
+    
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+      
+  </div>
+    
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
+    
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
+
+<script>
+    
+var currentTab = 0;
+    
+var showTab=function(n){
+    var x=$(".tab");
+    x.eq(n).css("display","block");
+    if(n==0){
+        $("#prevBtn").css("display","none");
+  } else {
+        $("#prevBtn").css("display","inline");
+  }
+  if (n == (x.length - 1)) {
+        $("#nextBtn").text("Submit");
+  } else {
+        $("#nextBtn").text("Next");
+  } 
+ fixStepIndicator(n);       
+}
+
+
+var nextPrev=function(n){
+   var x=$(".tab");
+    if (n == 1 && !validateForm()){
+        return false;
+    }
+    x.eq(currentTab).css("display","none");
+    currentTab=currentTab+n;
+    if (currentTab >= x.length) {
+        $("#deployform").submit();
+        return false;
+    }
+    showTab(currentTab);
+}
+
+var validateForm=function(){
+      var x, y, i, valid = true;
+      var re= "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$";
+      var regexp = new RegExp(re);
+      x =$(".tab");
+      y = x.eq(currentTab).find("input");
+      for (i = 0; i < 2; i++) {
+        if (y.eq(i).val()=='') {   
+          y.eq(i).addClass("invalid");
+            y.eq(i).after('<br><span class="error">Enter value</span>');
+          valid = false;
+        }
+      }
+        var w=y.eq(0).val();
+        if (!regexp.test(w)){   
+          y.eq(0).addClass("invalid");
+            y.eq(0).after('<br><span class="error">Invalid hostname</span>');
+          valid = false;
+        }    
+      if (valid) {
+          $(".step").eq(currentTab).addClass("finish");
+        }
+      return valid;
+    }
+
+    function fixStepIndicator(n) {
+      var i, x =$(".step");
+      for (i = 0; i < x.length; i++) {
+        x.eq(i).attr('class').replace("active","");
+      }
+      x.eq(n).addClass("active");
+    }
+
+showTab(currentTab);
+
+</script>
+
+</body>
+</html>
