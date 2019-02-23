@@ -22,7 +22,7 @@
 
 input {
   padding: 10px;
-  width: 90%;
+  width: 80%;
   margin-bottom: 10px;
   height: 30px;
   font-size: 17px;
@@ -36,11 +36,23 @@ input {
 input.error {
      display: inline-block;
 }
+    
+.lbl{
+    font-size: 1rem;
+    color: #2184be;
+    font-weight: bold;
+}
+    
+fieldset{
+     margin-top: 30px;
+    margin-left: 60px;
+}
 
 </style>
-    </head>
+        
+</head>
     
-    <body>
+<body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -52,74 +64,105 @@ input.error {
             
         <h3>HDFS</h3>
             <fieldset>
+                <label class="lbl">HDFS Name Node:</label>
                 <input type="text" placeholder="HDFS Name Node" class="required" name="hdfsNameNode">
-                <input type="text" placeholder="Hadoop Config Location" class="required" name="hadoopConfigLoc"> 
+                <label class="lbl">Hadoop Config Location:</label>
+                <input type="text" placeholder="Hadoop Config Location" class="required" name="hadoopConfigLoc">
+                <label class="lbl">HDFS Proxy User:</label>
                 <input type="text" placeholder="HDFS Proxy User" name="hdfsProxyUser">
             </fieldset>  
         
          <h3>Kafka</h3>
                 <fieldset>
+                    <label class="lbl">Kafka Broker Host:</label>
                     <input type="text" placeholder="Kafka Broker Host" class="required" name="kafkaBrokerHost">
+                    <label class="lbl">Kafka Broker Port:</label>
                      <input type="text" placeholder="Kafka Broker Port" class="required" name="kafkaBrokerPort">
                 </fieldset>
 
                 <h3>Solr</h3>
                 <fieldset>
+                    <label class="lbl">Solr Host:</label>
                     <input type="text" placeholder="Solr Host" class="required" name="solrHost">
+                    <label class="lbl">Solr Port:</label>
                      <input type="text" placeholder="Solr Port" class="required" name="solrPort">
+                    <label class="lbl">Solr Username:</label>
                      <input type="text" placeholder="Solr Username" name="solrUsername">
+                     <label class="lbl">Solr Password:</label>
                      <input type="text" placeholder="Solr Password" name="solrPassword"> 
                 </fieldset>
 
             <h3>MySQL</h3>
                 <fieldset>
+                     <label class="lbl">MySQL Host:</label>
                     <input type="text" placeholder="MySQL Host" class="required" name="mysqlHost">
+                     <label class="lbl">MySQL Port:</label>
                      <input type="text" placeholder="MySQL Port" class="required" name="mysqlPort">
-                     <input type="text" placeholder="MySQL Username" name="mysqlUsername"> 
+                     <label class="lbl">MySQL Username:</label>
+                     <input type="text" placeholder="MySQL Username" name="mysqlUsername">
+                      <label class="lbl">MySQL Password:</label>
                      <input placeholder="MySQL Password" name="mysqlPassword"> 
                 </fieldset>
                 
             <h3>Mongo</h3>
                 <fieldset>
+                     <label class="lbl">Mongo Hostname:</label>
                      <input type="text" placeholder="Mongo Hostname" class="required" name="mongoHostname">
+                     <label class="lbl">Mongo Port:</label>
                      <input type="text" placeholder="Mongo Port" class="required" name="mongoPort">
+                      <label class="lbl">Mongo Username:</label>
                      <input type="text" placeholder="Mongo Username" name="mongoUsername">
+                      <label class="lbl">Mongo Password:</label>
                      <input type="text" placeholder="Mongo Password" name="mongoPassword">             
                 </fieldset>
                 
-            <h3>Spark2</h3>
+            <h3>Zookeeper</h3>
                 <fieldset>
-                     <input type="text" placeholder="Spark2Host" class="required" name="Spark2"> 
-                     <input type="text" placeholder="Spark2Port" class="required" name="Spark2"> 
+                      <label class="lbl">Zookeeper Host:</label>
+                     <input type="text" placeholder="Zookeeper Host" class="required" name="zookeeperHost">
                 </fieldset>
                 
             <h3>Livy</h3>
                 <fieldset>
-                      <input type="text" placeholder="Livy Host" class="required" name="livyHost"> 
-                     <input type="text" placeholder="Livy Port" class="required" name="livyPort">
-                     <input type="text" placeholder="Livy Username" name="livyUsername">
-                     <input type="text" placeholder="Livy Password" name="livyPassword"> 
+                      <label class="lbl">Livy Host:</label>
+                      <input type="text" placeholder="Livy Host" class="required" name="livyHost">
+                      <label class="lbl">Livy Port:</label>
+                      <input type="text" placeholder="Livy Port" class="required" name="livyPort">
+                      <label class="lbl">Livy Username:</label>
+                      <input type="text" placeholder="Livy Username" name="livyUsername">
+                      <label class="lbl">Livy Password:</label>
+                      <input type="text" placeholder="Livy Password" name="livyPassword"> 
                 </fieldset>
                 
             <h3>Neo4J</h3>
                 <fieldset>
-                     <input type="text" placeholder="Neo4J Host" class="required" name="neo4jHost"> 
+                    <label class="lbl">Neo4J Host:</label>
+                     <input type="text" placeholder="Neo4J Host" class="required" name="neo4jHost">
+                    <label class="lbl">Neo4J Port:</label>
                      <input type="text" placeholder="Neo4J Port" class="required" name="neo4jPort">
+                    <label class="lbl">Neo4J Username:</label>
                      <input type="text" placeholder="Neo4J Username" name="neo4jUsername">
+                    <label class="lbl">Neo4J Password:</label>
                      <input type="text" placeholder="Neo4J Password" name="neo4jPassword"> 
                 </fieldset>
                 
             <h3>PackServer</h3>
                 <fieldset>
-                     <input type="text" placeholder="PackServer Host" class="required" name="packserverHost"> 
+                    <label class="lbl">PackServer Host:</label>
+                     <input type="text" placeholder="PackServer Host" class="required" name="packserverHost">
+                    <label class="lbl">PackServer Port:</label>
                      <input type="text" placeholder="PackServer Port" class="required" name="packserverPort"> 
                 </fieldset>
                 
             <h3>Nifi</h3>
                 <fieldset>
+                    <label class="lbl">Nifi Host:</label>
                      <input type="text" placeholder="Nifi Host" class="required" name="nifiHost">
-                     <input type="text" placeholder="Nifi Port" class="required" name="nifiPort"> 
-                     <input type="text" placeholder="Nifi Username" name="nifiUsername"> 
+                    <label class="lbl">Nifi Port:</label>
+                     <input type="text" placeholder="Nifi Port" class="required" name="nifiPort">
+                    <label class="lbl">Nifi Username:</label>
+                     <input type="text" placeholder="Nifi Username" name="nifiUsername">
+                    <label class="lbl">Nifi Password:</label>
                      <input type="text" placeholder="Nifi Password" name="nifiPassword"> 
                 </fieldset>
             
